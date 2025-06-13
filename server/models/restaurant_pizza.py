@@ -1,8 +1,11 @@
 from server.models import db
 
-class Restaurant(db.Model):
-    __tablename__ = 'restaurants'
+class RestaurantPizza(db.Model):
+    __tablename__ = 'restaurant_Pizzas'
 
     id = db.Column(db.Integer, primary_key=True)
-    name = db.Column(db.String, nullable=False)
-    address = db.Column(db.String, nullable=False)
+    price = db.Column(db.Float, nullable=False)
+    
+
+    pizza_id = db.Column(db.Integer, db.ForeignKey('pizzas.id'))
+    restaurant_id = db.Column(db.Integer, db.ForeignKey('restaurants.id')) 
