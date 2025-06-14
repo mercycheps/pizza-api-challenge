@@ -21,5 +21,7 @@ with app.app_context():
     
     #resturants_pizza r/ship
     rp = RestaurantPizza(price=15, pizza_id=p1.id, restaurant_id=r1.id)
+    rp2 = RestaurantPizza(price=12, restaurant_id=r2.id, pizza_id=p2.id)
+     
     db.session.add(rp)
     db.session.commit()
